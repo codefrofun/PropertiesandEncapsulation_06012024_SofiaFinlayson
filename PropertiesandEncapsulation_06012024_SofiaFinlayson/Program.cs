@@ -44,6 +44,7 @@ namespace PropertiesandEncapsulation_06012024_SofiaFinlayson
             get { return health; }
             set
             {
+                // Make sure health does not surpass 100 or go below 0
                 if (value < 0 || value > 100)
                 {
                     Console.WriteLine("Health must be between 0 - 100");
@@ -57,6 +58,7 @@ namespace PropertiesandEncapsulation_06012024_SofiaFinlayson
 
         public bool IsAlive
         {
+            // If player has more than 0 health, player is alive
             get { return health > 0; }
         }
 
@@ -89,13 +91,16 @@ namespace PropertiesandEncapsulation_06012024_SofiaFinlayson
                     itemCount = value;
                 }
             }
-
         }
 
         // If itemCount > inventory capacity, no more holding items
         public int IsFull
         {
             get { return itemCount >= Capacity; }
+            set
+            {
+
+            }
         }
 
         public Inventory ()
